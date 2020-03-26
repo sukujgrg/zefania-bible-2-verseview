@@ -9,7 +9,7 @@ VerseView 7x moved away from Zefania XML format for Bible. Now it uses SQLite db
 2. Run `Zefania2VerseView7x.py --xml-bile <xml file path>`.
   This will convert XML Bible into CSV format with same filename with added extension `.csv`
 3. Download [kjv](http://www.verseview.info/download/bibledb/kjv.db) from VerseView.
-4. Open kjv.db in `sqlite3` and run as following:
+4. Open kjv.db in `sqlite3` and execute following SQLite commands:
 ```
 sqlite3 ./kjv.db
 SQLite version 3.31.1 2020-01-27 19:55:54
