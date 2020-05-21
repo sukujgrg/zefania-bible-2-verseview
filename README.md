@@ -1,5 +1,5 @@
 # zefania-bible-2-verseview7x
-Convert Zefania Bible 2 VerseView 7x bible format
+Convert Zefania Bible to VerseView 7x bible format
 
 VerseView 7x moved away from Zefania XML format for Bible. Now it uses SQLite db.
 
