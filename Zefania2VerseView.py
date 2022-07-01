@@ -19,14 +19,17 @@ class CreateVVDb:
         self.db_path = xml_path.with_suffix(".db")
 
     def check_db_exists(self):
-        if self.db_path.exists():
-            prompt = input(f"{self.db_path} exists. Should I delete? [Y/n]")
-            if prompt.lower().startswith("n"):
-                sys.exit(0)
-            elif prompt.lower().startswith("y") or not prompt.strip():
-                self.db_path.unlink()
-            else:
-                sys.exit(1)
+        if not self.db_path.exists():
+            return
+        prompt = input(f"{self.db_path} exists. Should I delete? [y/N]")
+        prompt = prompt.lower().strip()
+        if prompt.startswith("n") or not prompt:
+            print("Exiting ...")
+            sys.exit(0)
+        elif prompt.startswith("y"):
+            self.db_path.unlink()
+        else:
+            sys.exit(1)
 
     def path(self):
         print(f"{self.xml_path} -> {self.db_path}")
